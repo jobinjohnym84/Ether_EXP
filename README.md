@@ -18,9 +18,9 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 
 1. Remix IDE
 2. Metamask 
-  c. Solidity
-  d. Etherscan
-  e. ABI - Application Binary Interface
-  f. dAPP
-  g. web3
+3. Solidity
+4. Etherscan
+5. ABI - Application Binary Interface
+6. dAPP
+7. web3
   
