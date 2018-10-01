@@ -15,8 +15,9 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 4. Host the html file in IIS (make sure Metamask is installed)
 
 # Important terms for future references 
-  a. Remix IDE
-  b. Metamask 
+
+1. Remix IDE
+2. Metamask 
   c. Solidity
   d. Etherscan
   e. ABI - Application Binary Interface
