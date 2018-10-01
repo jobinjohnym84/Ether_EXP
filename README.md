@@ -11,8 +11,8 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 
 1. Deploy the Smart contract via Remix (make sure Metamask is installed)
 2. Fetch the contract Address
-3. Update the html file with the contract address
-4. Host the html file in IIS (make sure Metamask is installed)
+3. Update the html file with the contract address and ABI
+4. Host the html file in IIS (make sure Metamask is installed) -- > This is required or else the web js will not find the MetaMask
 
 # Important terms for future references 
 
