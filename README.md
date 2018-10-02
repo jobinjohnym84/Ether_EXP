@@ -37,3 +37,9 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 9. Create a Virtual Directory in IIS
 10. MOve the HTML file and necessary JS files there.
 11. Open the URL and make sure, you have the MetaMask addon enabled. All Set, Play around with the Contract Functions :)
+
+# Good Usecase for a better BlockChain application
+
+1. If your application requires a shared database with multiple writing parties
+2. If the writing parties trust each other
+3. If you dont want to involve a third party to store or verify your data or transactions.
