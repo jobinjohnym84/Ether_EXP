@@ -1,0 +1,333 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <link rel="stylesheet" type="text/css" href="./styles.css"  />  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+<script>
+     window.onload = function () {
+         // check to see if user has metamask addon installed on his browser. check to make sure web3 is defined
+         if (typeof web3 === 'undefined') {
+             document.getElementById('metamask').innerHTML = 'You are running under Infura !!!'
+
+             const provider = new Web3.providers.HttpProvider(
+                 // pass url of remote node
+                 'https://ropsten.infura.io/v3/cbf5d244781843ec9e9d27beb26aef39'
+             );
+
+             web3 = new Web3(provider);
+
+         }
+         // call the getvalue function here
+         getvalue();
+     }
+
+     //function to retrieve the last inserted value on the blockchain
+     function getvalue() {
+         try {
+             // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
+             var abi = [
+                 {
+                     "constant": false,
+                     "inputs": [
+                         {
+                             "name": "_ctyry_Code",
+                             "type": "string"
+                         },
+                         {
+                             "name": "_Year",
+                             "type": "string"
+                         },
+                         {
+                             "name": "_Ts",
+                             "type": "string"
+                         }
+                     ],
+                     "name": "addTs",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "nonpayable",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [
+                         {
+                             "name": "index",
+                             "type": "uint256"
+                         }
+                     ],
+                     "name": "getTs",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "string"
+                         },
+                         {
+                             "name": "",
+                             "type": "string"
+                         },
+                         {
+                             "name": "",
+                             "type": "string"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [],
+                     "name": "getTsCount",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "name": "TsContracts",
+                     "outputs": [
+                         {
+                             "name": "ctyry_Code",
+                             "type": "string"
+                         },
+                         {
+                             "name": "Year",
+                             "type": "string"
+                         },
+                         {
+                             "name": "Ts",
+                             "type": "string"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 }
+             ]
+             //contract address. please change the address to your own
+             var contractaddress = '0xf26530942e838d4d4f190ae4508e89b0ae8a013c';
+             //instantiate and connect to contract address via Abi
+             var myAbi = web3.eth.contract(abi);
+             var myfunction = myAbi.at(contractaddress);
+             //call the get function of our SimpleStorage contract
+             myfunction.getTsCount.call(function (err, xname) {
+                 if (err) { console.log(err) }
+                 if (xname) {
+                     //display value on the webpage
+                     document.getElementById("xbalance").innerHTML = "Total data in blockchain is : " + xname;
+                 }
+             });
+         }
+         catch (err) {
+             document.getElementById("xbalance").innerHTML = err;
+         }
+     }
+
+     // function to add a new integer value to the blockchain
+     function setvalue() {
+
+
+         const provider = new Web3.providers.HttpProvider(
+             // pass url of remote node
+             'https://ropsten.infura.io/v3/cbf5d244781843ec9e9d27beb26aef39'
+         );
+
+         web3 = new Web3(provider);
+
+         try {
+             // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
+             var abi = [
+                 {
+                     "constant": false,
+                     "inputs": [
+                         {
+                             "name": "_ctyry_Code",
+                             "type": "string"
+                         },
+                         {
+                             "name": "_Year",
+                             "type": "string"
+                         },
+                         {
+                             "name": "_Ts",
+                             "type": "string"
+                         }
+                     ],
+                     "name": "addTs",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "nonpayable",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [
+                         {
+                             "name": "index",
+                             "type": "uint256"
+                         }
+                     ],
+                     "name": "getTs",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "string"
+                         },
+                         {
+                             "name": "",
+                             "type": "string"
+                         },
+                         {
+                             "name": "",
+                             "type": "string"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [],
+                     "name": "getTsCount",
+                     "outputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 },
+                 {
+                     "constant": true,
+                     "inputs": [
+                         {
+                             "name": "",
+                             "type": "uint256"
+                         }
+                     ],
+                     "name": "TsContracts",
+                     "outputs": [
+                         {
+                             "name": "ctyry_Code",
+                             "type": "string"
+                         },
+                         {
+                             "name": "Year",
+                             "type": "string"
+                         },
+                         {
+                             "name": "Ts",
+                             "type": "string"
+                         }
+                     ],
+                     "payable": false,
+                     "stateMutability": "view",
+                     "type": "function"
+                 }
+             ]
+             //contract address. please change the address to your own
+             var contractaddress = '0xf26530942e838d4d4f190ae4508e89b0ae8a013c';
+             //instantiate and connect to contract address via Abi
+             var myAbi = web3.eth.contract(abi);
+             var myfunction = myAbi.at(contractaddress);
+             //call the set function of our SimpleStorage contract
+             myfunction.addTs.sendTransaction(document.getElementById("xvalue").value, document.getElementById("xvalue1").value, document.getElementById("xvalue2").value, { from: web3.eth.accounts[0], gas: 40 }, function (error, result) {
+                 if (!error) {
+                     console.log(result);
+                 } else {
+                     console.log(error);
+                 }
+             })
+         } catch (err) {
+             document.getElementById("xvalue").innerHTML = err;
+         }
+     }
+
+</script>
+
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are few seconds away from submitting your data into BlockChain!</p>
+                        <div id="metamask"></div>
+
+                        <div id="xbalance"></div>
+                    </div>
+                   
+
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ethereum</a>
+                            </li>
+                            
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Timeseries Submission</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="xvalue" type="text" class="form-control" placeholder="Country Code *" value="" />
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <input id="xvalue2"  type="text" class="form-control" placeholder="Year *" value="" />
+                                        </div>
+                                       
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="xvalue1" type="text" class="form-control" placeholder="Indicator Code *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                           <input id="xvalue3" type="text" class="form-control" placeholder="Value *" value="" />
+                                        </div>
+                                        
+                                   
+
+                                        <input id="Button1" type="button" class="btnRegister" onclick="setvalue()" value="Add to TS" />
+
+                                        
+                                       
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
