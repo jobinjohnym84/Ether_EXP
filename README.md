@@ -43,3 +43,9 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 1. If your application requires a shared database with multiple writing parties
 2. If the writing parties trust each other
 3. If you dont want to involve a third party to store or verify your data or transactions.
+
+# On going work****
+
+1. Added a check for MetaMask, if it is not avilable use the Infura which is an opensource API platform
+2. Able to get the data back.
+3. Working on making a signed transaction for the Setting method.
