@@ -46,6 +46,6 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 
 # On going work****
 
-1. Added a check for MetaMask, if it is not avilable use the Infura which is an opensource API platform
+1. Added a check for MetaMask, if it is not avilable use the Infura which is an opensource API platform - https://infura.io/ 
 2. Able to get the data back.
 3. Working on making a signed transaction for the Setting method.
