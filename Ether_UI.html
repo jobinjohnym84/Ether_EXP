@@ -146,12 +146,7 @@
      function setvalue() {
 
 
-         const provider = new Web3.providers.HttpProvider(
-             // pass url of remote node
-             'https://ropsten.infura.io/v3/cbf5d244781843ec9e9d27beb26aef39'
-         );
-
-         web3 = new Web3(provider);
+       
 
          try {
              // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
@@ -258,7 +253,7 @@
              var myAbi = web3.eth.contract(abi);
              var myfunction = myAbi.at(contractaddress);
              //call the set function of our SimpleStorage contract
-             myfunction.addTs.sendTransaction(document.getElementById("xvalue").value, document.getElementById("xvalue1").value, document.getElementById("xvalue2").value, { from: web3.eth.accounts[0], gas: 40 }, function (error, result) {
+             myfunction.addTs.sendTransaction(document.getElementById("xvalue").value, document.getElementById("xvalue1").value, document.getElementById("xvalue2").value, { from: web3.eth.accounts[0], gas: 4000000 }, function (error, result) {
                  if (!error) {
                      console.log(result);
                  } else {
