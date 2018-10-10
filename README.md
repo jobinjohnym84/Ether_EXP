@@ -1,18 +1,18 @@
 
 # Introduction
 
-The intention of this repository is to create a Smart contract with UI to store and retrieve TimeSeries Data
+The intention of this repository is to create a Smart contract with UI to store and retrieve TimeSeries Data. This contains both Metamask and WITHOUT Metamask approaches.
 
 # Tools used
 
-a) Ethereum Remix  b) MetaMask  c) Visual Studio 
+a) Ethereum Remix  b) MetaMask  c) Visual Studio Code
 
 # Deployment Steps
 
 1. Deploy the Smart contract via Remix (make sure Metamask is installed)
 2. Fetch the contract Address
 3. Update the html file with the contract address and ABI
-4. Host the html file in IIS (make sure Metamask is installed) -- > This is required or else the web js will not find the MetaMask
+4. Host the html file in IIS (make sure Metamask is installed) -- > This is required or else the web3js will not find the MetaMask
 
 # Important terms for future references 
 
@@ -31,8 +31,8 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 3. Buy some ethers, as I mentioned you dont need to pay anything as long as you are using Ropsten Test Network.
 4. Write your logic or contract using an IDE. I have used - https://remix.ethereum.org
 5. Compile and Publish your smart contract via Remix IDE.
-6. YOu will get the Smart contract address and ABI after the deployment
-7. Create the HTML page and use the Web3 JS library.
+6. You will get the Smart contract address and ABI after the deployment
+7. Create the HTML page and use the Web3JS library.
 8. Use the Contract Address and the ABI and Function names as per the contract. You have completed the development by now
 9. Create a Virtual Directory in IIS
 10. MOve the HTML file and necessary JS files there.
@@ -43,6 +43,44 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio
 1. If your application requires a shared database with multiple writing parties
 2. If the writing parties trust each other
 3. If you dont want to involve a third party to store or verify your data or transactions.
+
+# My experience with different Framework and Tools (unfortunately most of them failed when metamask is not avilable)
+
+Below tools requires nodejs, which can be downloaded from https://nodejs.org/en/ 
+Once nodejs is installed use below commands via npm install
+
+1. TestRPC   -- > npm install -g ethereumjs-testrpc
+2. Ganache-cli  -- > npm install -g ganache-cli
+3. Truffle  -- > npm install -g truffle
+
+I have tried all the above options, but cannot make the Signed Trasanction. So I went ahead with a different approach of having a NodeJS REST Webservice.
+
+# Steps to do a signed Transaction without Metamask
+
+1. Install NodeJS
+2. Create a directory and copy the contents inside the Node folder 
+3. Navigate to that directory via command prompt and install below packages
+4. Install web3js version 0.20.0 -- > This is very important, since web3js 1.0 is having a lot of issues.-- > npm install 
+5. Install ethereumjs-tx -- > npm install ethereumjs-tx
+6. Install express  -- > npm install express
+7. Open the api.js file using Visual Studio Code and make sure you have the right values for below fields.
+      1. Ropsten- Infura link address.
+      2. Contract Address- This is the published smart contract address.
+      3. ABI - This is the ABI after the remix publish mechanism
+      4. Account -
+      5. Private Key - 
+8. start the webservice by running node api.js. This will start a webserver with port 3000.
+9. Create a Virtual directory in IIS and copy the html, css files.
+10.  Open the Ether_UI.html file and make sure you have right configurations.
+      1. Ropsten- Infura link address 
+      2. Smart contract address
+      3. ABI
+      4. Correct REST API url as per step 8
+      5. Correct TraceLink. This is a fancy item which will show all the transactions. Thanks to https://ropsten.etherscan.io
+11. Start the IIS, and navigate to the Ether_UI.html
+12. When you are doing a signed transaction, you can see the transaction ID in the node JS console. Copy that and do a search in             https://ropsten.etherscan.io, you can find the transaction proress. You will get the From address from this page, so that you can       update the above 10.5 link.
+
+
 
 # On going work****
 
