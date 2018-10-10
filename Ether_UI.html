@@ -125,6 +125,7 @@
              ]
              //contract address. please change the address to your own
              var contractaddress = '0xf26530942e838d4d4f190ae4508e89b0ae8a013c';
+web3.eth.defaultAccount = web3.eth.accounts[0];
              //instantiate and connect to contract address via Abi
              var myAbi = web3.eth.contract(abi);
              var myfunction = myAbi.at(contractaddress);
@@ -141,6 +142,25 @@
              document.getElementById("xbalance").innerHTML = err;
          }
      }
+
+
+function setvalueAPI(){
+
+$.ajax({
+
+  url: "http://localhost:3000/SendTS/"+ document.getElementById("xvalue").value + "/" + document.getElementById("xvalue1").value + "/" + document.getElementById("xvalue2").value ,
+  type: "get", //send it through get method
+  crossDomain: true,
+   dataType: 'jsonp',
+  success: function(response) {
+    //Do Something
+  },
+  error: function(xhr) {
+    //Do Something to handle error
+  }
+});
+
+}
 
      // function to add a new integer value to the blockchain
      function setvalue() {
@@ -277,6 +297,10 @@
                         <div id="metamask"></div>
 
                         <div id="xbalance"></div>
+
+                        <div id="TraceLink">
+                            <a href="https://ropsten.etherscan.io/address/0xce35b218f28a275457b9e7efd1257c08d201c9ec">Trace the Chain</a>
+                        </div>
                     </div>
                    
 
@@ -312,7 +336,7 @@
                                         
                                    
 
-                                        <input id="Button1" type="button" class="btnRegister" onclick="setvalue()" value="Add to TS" />
+                                        <input id="Button1" type="button" class="btnRegister" onclick="setvalueAPI()" value="Add to TS" />
 
                                         
                                        
