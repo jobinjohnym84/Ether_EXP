@@ -59,16 +59,16 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 
 1. Install NodeJS
 2. Create a directory and copy the contents inside the Node folder 
-3. Navigate to that directory via command prompt and install below packages
-4. Install web3js version 0.20.0 -- > This is very important, since web3js 1.0 is having a lot of issues.-- > npm install 
+3. Navigate to that directory via command prompt and install below packages  (side note - I just read if the packages.json is avilable,    then NPM INSTALL will install below packages automatically. I havnt tried this though.After the installation, make sure you have        web3,ethereumtx,express and coder folders in the node_module folder.
+4. Install web3js version 0.20.0 -- > This is very important, since web3js 1.0 is having a lot of issues.-- > npm install web3@0.20.0
 5. Install ethereumjs-tx -- > npm install ethereumjs-tx
 6. Install express  -- > npm install express
 7. Open the api.js file using Visual Studio Code and make sure you have the right values for below fields.
-      1. Ropsten- Infura link address.
+      1. Ropsten- Infura link address. For this signup with infura and then whitelist the smartcontract address, which will give you the          link
       2. Contract Address- This is the published smart contract address.
       3. ABI - This is the ABI after the remix publish mechanism
-      4. Account -
-      5. Private Key - 
+      4. Account - Once you signup with Metamask you will get an address. Believe me, MetaMask is not needed, just the address is enough
+      5. Private Key - Signup with MetaMask you will get the private key.
 8. start the webservice by running node api.js. This will start a webserver with port 3000.
 9. Create a Virtual directory in IIS and copy the html, css files.
 10.  Open the Ether_UI.html file and make sure you have right configurations.
@@ -84,6 +84,5 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 
 # On going work****
 
-1. Added a check for MetaMask, if it is not avilable use the Infura which is an opensource API platform - https://infura.io/ 
-2. Able to get the data back.
-3. Working on making a signed transaction for the Setting method.
+1. Able to get the data back.
+2. Better UI
