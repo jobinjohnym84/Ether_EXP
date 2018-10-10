@@ -146,19 +146,33 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 
 function setvalueAPI(){
 
-$.ajax({
+if (typeof web3 === 'undefined') {
+             
 
-  url: "http://localhost:3000/SendTS/"+ document.getElementById("xvalue").value + "/" + document.getElementById("xvalue1").value + "/" + document.getElementById("xvalue2").value ,
-  type: "get", //send it through get method
-  crossDomain: true,
-   dataType: 'jsonp',
-  success: function(response) {
-    //Do Something
-  },
-  error: function(xhr) {
-    //Do Something to handle error
-  }
+             $.ajax({
+
+url: "http://localhost:3000/SendTS/"+ document.getElementById("xvalue").value + "/" + document.getElementById("xvalue1").value + "/" + document.getElementById("xvalue2").value ,
+type: "get", //send it through get method
+crossDomain: true,
+ dataType: 'jsonp',
+success: function(response) {
+  //Do Something
+},
+error: function(xhr) {
+  //Do Something to handle error
+}
 });
+
+         }
+         else{
+
+             setvalue();
+
+         }
+
+
+
+
 
 }
 
