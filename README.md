@@ -5,7 +5,7 @@ The intention of this repository is to create a Smart contract with UI to store 
 
 # Tools used
 
-a) Ethereum Remix  b) MetaMask  c) Visual Studio Code
+a) Ethereum Remix  b) MetaMask  c) Visual Studio Code  d) NodeJS
 
 # Deployment Steps
 
@@ -44,7 +44,7 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio Code
 2. If the writing parties trust each other
 3. If you dont want to involve a third party to store or verify your data or transactions.
 
-# My experience with different Framework and Tools (unfortunately most of them failed when metamask is not avilable)
+# My experience with different Frameworks and Tools (unfortunately most of them failed when metamask is not avilable)
 
 Below tools requires nodejs, which can be downloaded from https://nodejs.org/en/ 
 Once nodejs is installed use below commands via npm install
@@ -64,7 +64,7 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 5. Install ethereumjs-tx -- > npm install ethereumjs-tx
 6. Install express  -- > npm install express
 7. Open the api.js file using Visual Studio Code and make sure you have the right values for below fields.
-      1. Ropsten- Infura link address. For this signup with infura and then whitelist the smartcontract address, which will give you the          link
+      1. Ropsten- Infura link address. For this, signup with infura and then whitelist the smartcontract address, which will give you            the link
       2. Contract Address- This is the published smart contract address.
       3. ABI - This is the ABI after the remix publish mechanism
       4. Account - Once you signup with Metamask you will get an address. Believe me, MetaMask is not needed, just the address is enough
