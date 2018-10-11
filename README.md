@@ -59,7 +59,7 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 
 1. Install NodeJS
 2. Create a directory and copy the contents inside the Node folder 
-3. Navigate to that directory via command prompt and install below packages  (side note - I just read if the packages.json is avilable,    then NPM INSTALL will install below packages automatically. I havnt tried this though.After the installation, make sure you have        web3,ethereumtx,express and coder folders in the node_module folder.
+3. Navigate to that directory via command prompt and install below packages  (side note - I just read if the packages.json is avilable,    then NPM INSTALL will install below packages automatically. I havnt tried this though.After the installation, make sure you have        web3,ethereumtx,express and coder folders in the node_module folder. If you have any issues related to git, please install the same      from https://git-scm.com/download/win 
 4. Install web3js version 0.20.0 -- > This is very important, since web3js 1.0 is having a lot of issues.-- > npm install web3@0.20.0
 5. Install ethereumjs-tx -- > npm install ethereumjs-tx
 6. Install express  -- > npm install express
