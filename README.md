@@ -1,11 +1,20 @@
 
 # Introduction
 
-The intention of this repository is to create a Smart contract with UI to store and retrieve TimeSeries Data. This contains both Metamask and WITHOUT Metamask approaches.
+The intention of this repository is to create a Smart contract with UI to store and retrieve TimeSeries Data in BLOCK CHAIN. This contains both Metamask and WITHOUT Metamask approaches.
 
 # Tools used
 
 a) Ethereum Remix  b) MetaMask  c) Visual Studio Code  d) NodeJS
+
+# Technology Stack
+
+  1. Solidity
+  2. NodeJS
+  3. Bootstrap
+  4. Ajax
+  5. JQuery
+  6. JavaScript
 
 # Deployment Steps
 
@@ -23,8 +32,9 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio Code  d) NodeJS
 5. ABI - Application Binary Interface
 6. dAPP
 7. web3
+8. NodeJS
   
-# Development Steps - 
+# Development Steps - MetaMask Approach
 
 1. Install metamask addin based on your browser - https://metamask.io/
 2. Sign in to Metamask and select the Ropsten Test network. This is a Test network and no need to pay anything for the Ethers
@@ -44,7 +54,7 @@ a) Ethereum Remix  b) MetaMask  c) Visual Studio Code  d) NodeJS
 2. If the writing parties trust each other
 3. If you dont want to involve a third party to store or verify your data or transactions.
 
-# My experience with different Frameworks and Tools (unfortunately most of them failed when metamask is not avilable)
+# My experience with different Frameworks and Tools (unfortunately most of them failed when metamask is not available)
 
 Below tools requires nodejs, which can be downloaded from https://nodejs.org/en/ 
 Once nodejs is installed use below commands via npm install
