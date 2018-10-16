@@ -1,0 +1,447 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <link rel="stylesheet" type="text/css" href="./styles.css"  />  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+<script>
+     window.onload = function () {
+         // check to see if user has metamask addon installed on his browser. check to make sure web3 is defined
+         if (typeof web3 === 'undefined') {
+             document.getElementById('metamask').innerHTML = 'You are running under Infura !!!'
+             $("#transType").val("Infura");
+             const provider = new Web3.providers.HttpProvider(
+                 // pass url of remote node
+                 'https://rinkeby.infura.io/v3/fc0f8170e6d743df854d3aadc847d5dc'
+             );
+
+             web3 = new Web3(provider);
+
+         }
+         // call the getvalue function here
+         getvalue();
+     }
+
+     //function to retrieve the last inserted value on the blockchain
+     function getvalue() {
+         try {
+             // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
+             var abi = [
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContracts",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			},
+			{
+				"name": "x2003A",
+				"type": "string"
+			},
+			{
+				"name": "x2004A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "_x2002A",
+				"type": "string"
+			},
+			{
+				"name": "_x2003A",
+				"type": "string"
+			},
+			{
+				"name": "_x2004A",
+				"type": "string"
+			}
+		],
+		"name": "addTs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTsCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getTs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+             //contract address. please change the address to your own
+             var contractaddress = '0x3cE29E8B6f6A5549577564b2B4BBA061d639150A';
+web3.eth.defaultAccount = web3.eth.accounts[1];
+             //instantiate and connect to contract address via Abi
+             var myAbi = web3.eth.contract(abi);
+             var myfunction = myAbi.at(contractaddress);
+             //call the get function of our SimpleStorage contract
+             myfunction.getTsCount.call(function (err, xname) {
+                 if (err) { console.log(err) }
+                 if (xname) {
+                     //display value on the webpage
+                     document.getElementById("xbalance").innerHTML = "Total data in blockchain is : " + xname;
+                 }
+             });
+         }
+         catch (err) {
+             document.getElementById("xbalance").innerHTML = err;
+         }
+     }
+
+
+function setvalueAPI(){
+    console.log(document.getElementById("transType").value);
+if (document.getElementById("transType").value === 'Infura') {
+    
+
+             $.ajax({
+
+url: "http://localhost:3000/SendTS/"+ document.getElementById("xIndiCode").value + "/" + document.getElementById("x2000A").value + "/" + document.getElementById("x2001A").value  + "/" + document.getElementById("x2002A").value  + "/" + document.getElementById("x2003A").value  + "/" + document.getElementById("x2004A").value ,
+type: "get", //send it through get method
+crossDomain: true,
+ dataType: 'jsonp',
+success: function(response) {
+  //Do Something
+},
+error: function(xhr) {
+  //Do Something to handle error
+}
+});
+
+         }
+         else{
+
+             setvalue();
+
+         }
+
+
+
+
+
+}
+
+     // function to add a new integer value to the blockchain
+     function setvalue() {
+
+
+       
+
+         try {
+             // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
+             var abi = [
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContracts",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			},
+			{
+				"name": "x2003A",
+				"type": "string"
+			},
+			{
+				"name": "x2004A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "_x2002A",
+				"type": "string"
+			},
+			{
+				"name": "_x2003A",
+				"type": "string"
+			},
+			{
+				"name": "_x2004A",
+				"type": "string"
+			}
+		],
+		"name": "addTs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTsCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getTs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+             //contract address. please change the address to your own
+             var contractaddress = '0x3cE29E8B6f6A5549577564b2B4BBA061d639150A';
+             //instantiate and connect to contract address via Abi
+             var myAbi = web3.eth.contract(abi);
+             var myfunction = myAbi.at(contractaddress);
+             //call the set function of our SimpleStorage contract
+             myfunction.addTs.sendTransaction(document.getElementById("xIndiCode").value, document.getElementById("x2000A").value, document.getElementById("x2001A").value, document.getElementById("x2002A").value, document.getElementById("x2003A").value, document.getElementById("x2004A").value, { from: web3.eth.accounts[1], gas: 4000000 }, function (error, result) {
+                 if (!error) {
+                     console.log(result);
+                 } else {
+                     console.log(error);
+                 }
+             })
+         } catch (err) {
+             document.getElementById("xvalue").innerHTML = err;
+         }
+     }
+
+</script>
+
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are few seconds away from submitting your data into BlockChain!</p>
+                        <div id="metamask"></div>
+                        <input type="hidden" id="transType" name="user"  />
+                        <div id="xbalance"></div>
+
+                        <div id="TraceLink">
+                            <a href="https://rinkeby.etherscan.io/address/0x3ce29e8b6f6a5549577564b2b4bba061d639150a" target="_blank">Trace the Chain</a>
+                        </div>
+                        <div id="ViewLink">
+                            <a href="read_final.html" target="_blank">View Data</a>
+                        </div>
+                    </div>
+                   
+
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ethereum</a>
+                            </li>
+                            
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Timeseries Submission</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="xIndiCode" type="text" class="form-control" placeholder="Indicator Code *" value="" />
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <input id="x2000A"  type="text" class="form-control" placeholder="2000A *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="x2001A"  type="text" class="form-control" placeholder="2001A *" value="" />
+                                        </div>
+
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="x2002A"  type="text" class="form-control" placeholder="2002A *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="x2003A" type="text" class="form-control" placeholder="2003A *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="x2004A" type="text" class="form-control" placeholder="2004A *" value="" />
+                                        </div>
+
+                                   
+
+                                        <input id="Button1" type="button" class="btnRegister" onclick="setvalueAPI()" value="Add to Chain" />
+
+                                        
+                                       
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
