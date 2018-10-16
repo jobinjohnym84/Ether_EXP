@@ -92,7 +92,7 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 
 
 
-# On going work****
+# Final Working Code
 
-1. Able to get the data back.
-2. Better UI
+1. Node/ API_New.js is the latest WebService
+2. Final.html , Read_Final.html are the final HTML files
