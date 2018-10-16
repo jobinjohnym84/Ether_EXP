@@ -90,7 +90,14 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 11. Start the IIS, and navigate to the Ether_UI.html
 12. When you are doing a signed transaction, you can see the transaction ID in the node JS console. Copy that and do a search in             https://ropsten.etherscan.io, you can find the transaction proress. You will get the From address from this page, so that you can       update the above 10.5 link.
 
+# Rinkeby Account setup and Get free Ether
 
+1. Install MetaMask
+2. Switch to Rinkeby Test Network
+3. Click on Buy which will redirect to the Rinkeby Page
+4. Click on the Crypto Faucet
+5. Copy the MetaMask Account and post a Tweet in twitter and get the address
+6. Paste the address in step 4 above, and click on the get ether. Wait for sometime, you will get the Free Ethers.
 
 # Final Working Code
 
