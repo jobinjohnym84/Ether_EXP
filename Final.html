@@ -264,6 +264,8 @@
 		"type": "function"
 	}
 ]
+
+
              //contract address. please change the address to your own
              var contractaddress = '0x90e2Da751BFB03F84222Bbc8A2FCf503b9679E43';
 web3.eth.defaultAccount = web3.eth.accounts[1];
@@ -287,12 +289,16 @@ web3.eth.defaultAccount = web3.eth.accounts[1];
 
 function setvalueAPI(){
     console.log(document.getElementById("transType").value);
+
+var customuri = "http://localhost:3000/SendTS/"+ document.getElementById("lbl111GDP").textContent + "/" + ( document.getElementById("x111GDP2000A").value == "" ? " " : document.getElementById("x111GDP2000A").value )  + "/" + ( document.getElementById("x111GDP2001A").value == "" ? " " : document.getElementById("x111GDP2001A").value)  + "/" + (document.getElementById("x111GDP2002A").value =="" ? " " : document.getElementById("x111GDP2002A").value ) + "/" + document.getElementById("lbl112GDP").textContent  + "/" + ( document.getElementById("x112GDP2000A").value =="" ? " " : document.getElementById("x112GDP2000A").value ) + "/" + ( document.getElementById("x112GDP2001A").value=="" ? " " : document.getElementById("x112GDP2001A").value )+ "/" + ( document.getElementById("x112GDP2002A").value == "" ? " " : document.getElementById("x112GDP2002A").value ) + "/" + document.getElementById("lbl134GDP").textContent + "/" + (document.getElementById("x134GDP2000A").value =="" ? " " : document.getElementById("x134GDP2000A").value )  + "/" + ( document.getElementById("x134GDP2001A").value =="" ? " " : document.getElementById("x134GDP2001A").value ) + "/" + (document.getElementById("x134GDP2002A").value == "" ? " " : document.getElementById("x134GDP2002A").value);
+alert(customuri);
+
 if (document.getElementById("transType").value === 'Infura') {
     
 
              $.ajax({
 
-url: "http://localhost:3000/SendTS/"+ document.getElementById("lbl111GDP").textContent + "/" + document.getElementById("x111GDP2000A").value + "/" + document.getElementById("x111GDP2001A").value  + "/" + document.getElementById("x111GDP2002A").value  + "/" + document.getElementById("lbl112GDP").textContent  + "/" + document.getElementById("x112GDP2000A").value + "/" + document.getElementById("x112GDP2001A").value + "/" + document.getElementById("x112GDP2002A").value + "/" + document.getElementById("lbl134GDP").textContent + "/" + document.getElementById("x134GDP2000A").value  + "/" + document.getElementById("x134GDP2001A").value + "/" + document.getElementById("x134GDP2002A").value, 
+url: customuri, 
 type: "get", //send it through get method
 crossDomain: true,
  dataType: 'jsonp',
