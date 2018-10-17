@@ -291,7 +291,7 @@ function setvalueAPI(){
     console.log(document.getElementById("transType").value);
 
 var customuri = "http://localhost:3000/SendTS/"+ document.getElementById("lbl111GDP").textContent + "/" + ( document.getElementById("x111GDP2000A").value == "" ? " " : document.getElementById("x111GDP2000A").value )  + "/" + ( document.getElementById("x111GDP2001A").value == "" ? " " : document.getElementById("x111GDP2001A").value)  + "/" + (document.getElementById("x111GDP2002A").value =="" ? " " : document.getElementById("x111GDP2002A").value ) + "/" + document.getElementById("lbl112GDP").textContent  + "/" + ( document.getElementById("x112GDP2000A").value =="" ? " " : document.getElementById("x112GDP2000A").value ) + "/" + ( document.getElementById("x112GDP2001A").value=="" ? " " : document.getElementById("x112GDP2001A").value )+ "/" + ( document.getElementById("x112GDP2002A").value == "" ? " " : document.getElementById("x112GDP2002A").value ) + "/" + document.getElementById("lbl134GDP").textContent + "/" + (document.getElementById("x134GDP2000A").value =="" ? " " : document.getElementById("x134GDP2000A").value )  + "/" + ( document.getElementById("x134GDP2001A").value =="" ? " " : document.getElementById("x134GDP2001A").value ) + "/" + (document.getElementById("x134GDP2002A").value == "" ? " " : document.getElementById("x134GDP2002A").value);
-alert(customuri);
+//alert(customuri);
 
 if (document.getElementById("transType").value === 'Infura') {
     
@@ -304,12 +304,14 @@ crossDomain: true,
  dataType: 'jsonp',
 success: function(response) {
   //Do Something
+  
 },
 error: function(xhr) {
   //Do Something to handle error
 }
 });
 
+alert("Submitted to Chain");
          }
          else{
 
@@ -575,8 +577,9 @@ error: function(xhr) {
              var myAbi = web3.eth.contract(abi);
              var myfunction = myAbi.at(contractaddress);
              //call the set function of our SimpleStorage contract
-             myfunction.addTs.sendTransaction(document.getElementById("lbl111GDP").textContent, document.getElementById("x111GDP2000A").value, document.getElementById("x111GDP2001A").value, document.getElementById("x111GDP2002A").value, document.getElementById("lbl112GDP").textContent, document.getElementById("x112GDP2000A").value, document.getElementById("x112GDP2001A").value, document.getElementById("x112GDP2002A").value, document.getElementById("lbl134GDP").textContent, document.getElementById("x134GDP2000A").value, document.getElementById("x134GDP2001A").value, document.getElementById("x134GDP2002A").value, { from: web3.eth.accounts[1], gas: 4000000 }, function (error, result) {
+             myfunction.addTs.sendTransaction(document.getElementById("lbl111GDP").textContent, (document.getElementById("x111GDP2000A").value=="" ? " " : document.getElementById("x111GDP2000A").value ), (document.getElementById("x111GDP2001A").value == "" ? " " : document.getElementById("x111GDP2001A").value), (document.getElementById("x111GDP2002A").value == "" ? " " : document.getElementById("x111GDP2002A").value ), document.getElementById("lbl112GDP").textContent, (document.getElementById("x112GDP2000A").value =="" ? " " : document.getElementById("x112GDP2000A").value), (document.getElementById("x112GDP2001A").value == "" ? " " : document.getElementById("x112GDP2001A").value), (document.getElementById("x112GDP2002A").value == "" ? " " : document.getElementById("x112GDP2002A").value ), document.getElementById("lbl134GDP").textContent, (document.getElementById("x134GDP2000A").value == "" ? " " : document.getElementById("x134GDP2000A").value ), (document.getElementById("x134GDP2001A").value == "" ? " " : document.getElementById("x134GDP2001A").value), (document.getElementById("x134GDP2002A").value =="" ? " " : document.getElementById("x134GDP2002A").value), { from: web3.eth.accounts[1], gas: 4000000 }, function (error, result) {
                  if (!error) {
+					alert("Submitted to Chain");
                      console.log(result);
                  } else {
                      console.log(error);
