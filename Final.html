@@ -28,69 +28,54 @@
              // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
              var abi = [
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "TsContracts",
-		"outputs": [
-			{
-				"name": "Indi_Code",
-				"type": "string"
-			},
-			{
-				"name": "x2000A",
-				"type": "string"
-			},
-			{
-				"name": "x2001A",
-				"type": "string"
-			},
-			{
-				"name": "x2002A",
-				"type": "string"
-			},
-			{
-				"name": "x2003A",
-				"type": "string"
-			},
-			{
-				"name": "x2004A",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_Indi_Code",
+				"name": "Ts111GDP_Indi_Code",
 				"type": "string"
 			},
 			{
-				"name": "_x2000A",
+				"name": "Ts111GDP_x2000A",
 				"type": "string"
 			},
 			{
-				"name": "_x2001A",
+				"name": "Ts111GDP_x2001A",
 				"type": "string"
 			},
 			{
-				"name": "_x2002A",
+				"name": "Ts111GDP_x2002A",
 				"type": "string"
 			},
 			{
-				"name": "_x2003A",
+				"name": "Ts112GDP_Indi_Code",
 				"type": "string"
 			},
 			{
-				"name": "_x2004A",
+				"name": "Ts112GDP_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "Ts112GDP_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "Ts112GDP_x2002A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2002A",
 				"type": "string"
 			}
 		],
@@ -103,20 +88,6 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTsCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -157,10 +128,144 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getTs2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTsCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV1",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV2",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV3",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
              //contract address. please change the address to your own
-             var contractaddress = '0x3cE29E8B6f6A5549577564b2B4BBA061d639150A';
+             var contractaddress = '0x90e2Da751BFB03F84222Bbc8A2FCf503b9679E43';
 web3.eth.defaultAccount = web3.eth.accounts[1];
              //instantiate and connect to contract address via Abi
              var myAbi = web3.eth.contract(abi);
@@ -187,7 +292,7 @@ if (document.getElementById("transType").value === 'Infura') {
 
              $.ajax({
 
-url: "http://localhost:3000/SendTS/"+ document.getElementById("xIndiCode").value + "/" + document.getElementById("x2000A").value + "/" + document.getElementById("x2001A").value  + "/" + document.getElementById("x2002A").value  + "/" + document.getElementById("x2003A").value  + "/" + document.getElementById("x2004A").value ,
+url: "http://localhost:3000/SendTS/"+ document.getElementById("lbl111GDP").textContent + "/" + document.getElementById("x111GDP2000A").value + "/" + document.getElementById("x111GDP2001A").value  + "/" + document.getElementById("x111GDP2002A").value  + "/" + document.getElementById("lbl112GDP").textContent  + "/" + document.getElementById("x112GDP2000A").value + "/" + document.getElementById("x112GDP2001A").value + "/" + document.getElementById("x112GDP2002A").value + "/" + document.getElementById("lbl134GDP").textContent + "/" + document.getElementById("x134GDP2000A").value  + "/" + document.getElementById("x134GDP2001A").value + "/" + document.getElementById("x134GDP2002A").value, 
 type: "get", //send it through get method
 crossDomain: true,
  dataType: 'jsonp',
@@ -222,69 +327,54 @@ error: function(xhr) {
              // contract Abi defines all the variables,constants and functions of the smart contract. replace with your own abi
              var abi = [
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "TsContracts",
-		"outputs": [
-			{
-				"name": "Indi_Code",
-				"type": "string"
-			},
-			{
-				"name": "x2000A",
-				"type": "string"
-			},
-			{
-				"name": "x2001A",
-				"type": "string"
-			},
-			{
-				"name": "x2002A",
-				"type": "string"
-			},
-			{
-				"name": "x2003A",
-				"type": "string"
-			},
-			{
-				"name": "x2004A",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_Indi_Code",
+				"name": "Ts111GDP_Indi_Code",
 				"type": "string"
 			},
 			{
-				"name": "_x2000A",
+				"name": "Ts111GDP_x2000A",
 				"type": "string"
 			},
 			{
-				"name": "_x2001A",
+				"name": "Ts111GDP_x2001A",
 				"type": "string"
 			},
 			{
-				"name": "_x2002A",
+				"name": "Ts111GDP_x2002A",
 				"type": "string"
 			},
 			{
-				"name": "_x2003A",
+				"name": "Ts112GDP_Indi_Code",
 				"type": "string"
 			},
 			{
-				"name": "_x2004A",
+				"name": "Ts112GDP_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "Ts112GDP_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "Ts112GDP_x2002A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2000A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2001A",
+				"type": "string"
+			},
+			{
+				"name": "Ts134GDP_x2002A",
 				"type": "string"
 			}
 		],
@@ -297,20 +387,6 @@ error: function(xhr) {
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTsCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -351,15 +427,149 @@ error: function(xhr) {
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getTs2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTsCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV1",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV2",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TsContractsV3",
+		"outputs": [
+			{
+				"name": "Indi_Code",
+				"type": "string"
+			},
+			{
+				"name": "x2000A",
+				"type": "string"
+			},
+			{
+				"name": "x2001A",
+				"type": "string"
+			},
+			{
+				"name": "x2002A",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
              //contract address. please change the address to your own
-             var contractaddress = '0x3cE29E8B6f6A5549577564b2B4BBA061d639150A';
+             var contractaddress = '0x90e2Da751BFB03F84222Bbc8A2FCf503b9679E43';
              //instantiate and connect to contract address via Abi
              var myAbi = web3.eth.contract(abi);
              var myfunction = myAbi.at(contractaddress);
              //call the set function of our SimpleStorage contract
-             myfunction.addTs.sendTransaction(document.getElementById("xIndiCode").value, document.getElementById("x2000A").value, document.getElementById("x2001A").value, document.getElementById("x2002A").value, document.getElementById("x2003A").value, document.getElementById("x2004A").value, { from: web3.eth.accounts[1], gas: 4000000 }, function (error, result) {
+             myfunction.addTs.sendTransaction(document.getElementById("lbl111GDP").textContent, document.getElementById("x111GDP2000A").value, document.getElementById("x111GDP2001A").value, document.getElementById("x111GDP2002A").value, document.getElementById("lbl112GDP").textContent, document.getElementById("x112GDP2000A").value, document.getElementById("x112GDP2001A").value, document.getElementById("x112GDP2002A").value, document.getElementById("lbl134GDP").textContent, document.getElementById("x134GDP2000A").value, document.getElementById("x134GDP2001A").value, document.getElementById("x134GDP2002A").value, { from: web3.eth.accounts[1], gas: 4000000 }, function (error, result) {
                  if (!error) {
                      console.log(result);
                  } else {
@@ -385,7 +595,7 @@ error: function(xhr) {
                         <div id="xbalance"></div>
 
                         <div id="TraceLink">
-                            <a href="https://rinkeby.etherscan.io/address/0x3ce29e8b6f6a5549577564b2b4bba061d639150a" target="_blank">Trace the Chain</a>
+                            <a href="https://rinkeby.etherscan.io/address/0x90e2da751bfb03f84222bbc8a2fcf503b9679e43" target="_blank">Trace the Chain</a>
                         </div>
                         <div id="ViewLink">
                             <a href="read_final.html" target="_blank">View Data</a>
@@ -403,41 +613,73 @@ error: function(xhr) {
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Timeseries Submission</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input id="xIndiCode" type="text" class="form-control" placeholder="Indicator Code *" value="" />
-                                        </div>
-                                      
-                                        <div class="form-group">
-                                            <input id="x2000A"  type="text" class="form-control" placeholder="2000A *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="x2001A"  type="text" class="form-control" placeholder="2001A *" value="" />
-                                        </div>
+								
+								<div class="row register-form">
 
-                                        
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input id="x2002A"  type="text" class="form-control" placeholder="2002A *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="x2003A" type="text" class="form-control" placeholder="2003A *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="x2004A" type="text" class="form-control" placeholder="2004A *" value="" />
-                                        </div>
+									<table class="table table-striped">
+										<thead>
+											<tr align="center">
+												<th scope="col">Series</th>
+												<th scope="col">2001A</th>
+												<th scope="col">2002A</th>
+												<th scope="col">2003A</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">
+													<label id="lbl111GDP">111GDP</label>
+												</th>
+												<td>
+													<input id="x111GDP2000A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x111GDP2001A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x111GDP2002A" type="text" class="form-control" value="" />
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label id="lbl112GDP">112GDP</label>
+												</th>
+												<td>
+													<input id="x112GDP2000A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x112GDP2001A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x112GDP2002A" type="text" class="form-control" value="" />
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label id="lbl134GDP">134GDP</label>
+												</th>
+												<td>
+													<input id="x134GDP2000A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x134GDP2001A" type="text" class="form-control" value="" />
+												</td>
+												<td>
+													<input id="x134GDP2002A" type="text" class="form-control" value="" />
+												</td>
+											</tr>
+										   
+										</tbody>
+									</table>
+			
+			
+									<div class="col-md-6" align="right">
+			
+										<input id="Button1" type="button" class="btnRegister" onclick="setvalueAPI()" value="Add to Chain" />
+			
+									</div>
+								</div>
 
-                                   
-
-                                        <input id="Button1" type="button" class="btnRegister" onclick="setvalueAPI()" value="Add to Chain" />
-
-                                        
-                                       
-
-                                    </div>
-                                </div>
                             </div>
                             
                         </div>
