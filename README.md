@@ -103,3 +103,8 @@ I have tried all the above options, but cannot make the Signed Trasanction. So I
 
 1. Node/ API_New.js is the latest WebService
 2. Final.html , Read_Final.html are the final HTML files
+
+# Fix for the NPM Install -make sure you install GIT and still getting the SSL error
+
+npm config strict-ssl false
+git config --global http.sslverify false
